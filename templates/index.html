@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Logo 3D Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+    
+    <!-- Menu icon and collapsible menu -->
+    <div class="menu-icon">☰</div>
+    <div class="material-menu" id="material-menu">
+        <h3>Customize Logo</h3>
+        <div class="material-section">
+            <h4>Material</h4>
+            <label><input type="radio" name="material" value="glass" checked> Glass</input></label>
+            <label><input type="radio" name="material" value="plastic"> Plastic</input></label>
+            <label><input type="radio" name="material" value="gold"> Gold</input></label>
+            <label><input type="radio" name="material" value="wood"> Wood</input></label>
+            <label><input type="radio" name="material" value="silver"> Silver</input></label>
+        </div>
+        <div class="particle-section">
+            <h4>Particles</h4>
+            <label><input type="checkbox" id="show-particles" checked> Show Particles</input></label>
+        </div>
+        <div class="particle-color-section">
+            <h4>Particle Color</h4>
+            <label><input type="radio" name="particle-color" value="cyan" checked> Cyan</input></label>
+            <label><input type="radio" name="particle-color" value="red"> Red</input></label>
+            <label><input type="radio" name="particle-color" value="yellow"> Yellow</input></label>
+            <label><input type="radio" name="particle-color" value="green"> Green</input></label>
+            <label><input type="radio" name="particle-color" value="white"> White</input></label>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Your Clothing Brand</h1>
+            <p>Discover the latest trends</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+    <div class="content">
+        <section>
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </section>
+        <section>
+            <h2>Our Collection</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </section>
+        <section class="video-section">
+            <video class="full-width-video" autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/your-video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </div>
+
+    <!-- Load Three.js and STL Loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
